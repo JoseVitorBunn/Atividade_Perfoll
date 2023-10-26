@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Paciente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Paciente</h1>
+        <form action="cadastro.php" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select><br>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required><br>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required><br>
+
+            <input type="submit" value="Registrar">
+        </form>
+
+        <h2>Pesquisar Paciente</h2>
+        <form action="buscar_paciente.php" method="post">
+            <label for="nome_paciente">Nome do Paciente:</label>
+            <input type="text" id="nome_paciente" name="nome_paciente" ><br>
+            <label for="data_inicio">Data de Início:</label>
+            <input type="date" id="data_inicio" name="data_inicio"><br>
+            <input type="submit" value="Pesquisar">
+        </form>
+
+        <div id="resultado">
+            <!-- Aqui serão exibidas as informações do paciente após a pesquisa -->
+        </div>
+    </div>
+</body>
+</html>
